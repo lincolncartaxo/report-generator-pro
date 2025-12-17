@@ -160,7 +160,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 20mm 15mm 15mm 15mm;
+    margin: 25mm 15mm 15mm 15mm;
   }
 
   body {
@@ -181,22 +181,21 @@
     top: 0;
     left: 0;
     right: 0;
+    height: 30mm; /* altura fixa do header */
     display: flex !important;
+    align-items: center;
     justify-content: center;
-    padding: 8px 0;
     background: white;
-    border-bottom: 1px solid hsl(var(--border));
     z-index: 1000;
   }
 
   .print-header img {
-    height: 80px;
+    height: 22mm; /* melhor para A4 */
     width: auto;
   }
 
   .print-content {
-    margin-top: 0;
-    padding-top: 100px;
+    padding-top: 40mm !important; /* maior que a altura do header */
   }
 
   .photo-grid {
