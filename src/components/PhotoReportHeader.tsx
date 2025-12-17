@@ -15,9 +15,6 @@ export function PhotoReportHeader({ reportInfo, onReportInfoChange }: PhotoRepor
         <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">
           Relatório Fotográfico
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Documentação visual do projeto
-        </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -66,7 +63,7 @@ export function PhotoReportHeader({ reportInfo, onReportInfoChange }: PhotoRepor
         <div className="space-y-2">
           <label className="flex items-center gap-2 text-sm font-medium text-foreground">
             <Hash className="h-4 w-4 text-primary" />
-            Código do Projeto
+            Nome do Projeto
           </label>
           <Input
             value={reportInfo.projectCode}

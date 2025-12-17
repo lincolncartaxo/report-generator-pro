@@ -66,7 +66,7 @@ export function SortablePhotoItem({
       </div>
 
       {/* Photo Number */}
-      <div className="absolute right-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow-medium">
+      <div className="absolute left-2 top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow-medium print:opacity-100 group-hover:left-10 transition-all">
         {index + 1}
       </div>
 
