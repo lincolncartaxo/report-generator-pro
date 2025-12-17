@@ -55,7 +55,7 @@ const Index = () => {
             <img 
               src="http://lclprojetos.com/img/logo_color.png" 
               alt="LCL Projetos" 
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </div>
         </div>
