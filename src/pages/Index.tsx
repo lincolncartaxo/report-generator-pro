@@ -51,10 +51,12 @@ const Index = () => {
       <div className="mx-auto max-w-6xl px-4 py-8">
         {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <div className="rounded-xl bg-card px-8 py-4 shadow-soft">
-            <h2 className="font-display text-2xl font-bold tracking-tight text-primary">
-              LCL Projetos
-            </h2>
+          <div className="rounded-xl bg-card px-6 py-4 shadow-soft">
+            <img 
+              src="http://lclprojetos.com/img/logo_color.png" 
+              alt="LCL Projetos" 
+              className="h-12 w-auto"
+            />
           </div>
         </div>
 
