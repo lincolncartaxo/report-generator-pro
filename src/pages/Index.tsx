@@ -48,9 +48,17 @@ const Index = () => {
     <div className="min-h-screen gradient-subtle">
       <Toaster position="top-right" richColors />
       
-      <div className="mx-auto max-w-6xl px-4 py-8">
-        {/* Logo */}
-        <div className="mb-8 flex justify-center">
+      {/* Print Header - appears on all printed pages */}
+      <div className="print-header hidden">
+        <img 
+          src="http://lclprojetos.com/img/logo_color.png" 
+          alt="LCL Projetos"
+        />
+      </div>
+      
+      <div className="mx-auto max-w-6xl px-4 py-8 print-content">
+        {/* Logo - screen only */}
+        <div className="mb-8 flex justify-center no-print">
           <div className="rounded-xl bg-card px-6 py-4 shadow-soft">
             <img 
               src="http://lclprojetos.com/img/logo_color.png" 
