@@ -160,7 +160,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 25mm 15mm 15mm 15mm;
+    margin: 30mm 15mm 15mm 15mm;
   }
 
   body {
@@ -177,20 +177,15 @@
   }
 
   .print-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 30mm; /* altura fixa do header */
+    position: relative !important; 
     display: flex !important;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 10mm;
     background: white;
-    z-index: 1000;
   }
 
   .print-header img {
-    height: 22mm; /* melhor para A4 */
+    height: 22mm;
     width: auto;
   }
 
