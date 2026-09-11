@@ -1,0 +1,46 @@
+From 00643ee8753dbb0081e3f62cccff133800d57581 Mon Sep 17 00:00:00 2001
+From: Chiquinha <chiquinha@openclaw.local>
+Date: Fri, 11 Sep 2026 00:05:04 +0000
+Subject: [PATCH] Fix image cropping on PDF export by using 1-column layout and
+ contain
+
+---
+ src/index.css | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+
+diff --git a/src/index.css b/src/index.css
+index 09393fd..59d187e 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -195,14 +195,24 @@
+ 
+   .photo-grid {
+     display: grid !important;
+-    grid-template-columns: repeat(2, 1fr) !important;
+-    gap: 16px !important;
++    grid-template-columns: 1fr !important;
++    gap: 24px !important;
+     page-break-inside: avoid;
+   }
+ 
+   .photo-item {
+-    page-break-inside: avoid;
+-    break-inside: avoid;
++    page-break-inside: avoid !important;
++    break-inside: avoid !important;
++  }
++
++  /* Ajustes de impressão para evitar cortes na imagem */
++  .photo-item .aspect-square {
++    aspect-ratio: auto !important;
++    height: 110mm !important; /* Aproximadamente metade da área útil da página */
++  }
++
++  .photo-item img {
++    object-fit: contain !important;
+   }
+ }
+ 
+-- 
+2.39.5
+

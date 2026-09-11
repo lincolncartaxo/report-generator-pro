@@ -195,14 +195,24 @@
 
   .photo-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
     page-break-inside: avoid;
   }
 
   .photo-item {
-    page-break-inside: avoid;
-    break-inside: avoid;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Ajustes de impressão para evitar cortes na imagem */
+  .photo-item .aspect-square {
+    aspect-ratio: auto !important;
+    height: 110mm !important; /* Aproximadamente metade da área útil da página */
+  }
+
+  .photo-item img {
+    object-fit: contain !important;
   }
 }
 
