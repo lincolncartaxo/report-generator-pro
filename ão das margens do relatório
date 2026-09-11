@@ -1,0 +1,50 @@
+[1mdiff --git a/src/index.css b/src/index.css[m
+[1mindex 59d187e..4654932 100644[m
+[1m--- a/src/index.css[m
+[1m+++ b/src/index.css[m
+[36m@@ -190,14 +190,16 @@[m
+   }[m
+ [m
+   .print-content {[m
+[31m-    padding-top: 40mm !important; /* maior que a altura do header */[m
+[32m+[m[32m    padding-top: 40mm !important;[m
+[32m+[m[32m    padding-bottom: 0 !important;[m
+[32m+[m[32m    margin-bottom: 0 !important; /* maior que a altura do header */[m
+   }[m
+ [m
+   .photo-grid {[m
+     display: grid !important;[m
+     grid-template-columns: 1fr !important;[m
+     gap: 24px !important;[m
+[31m-    page-break-inside: avoid;[m
+[32m+[m[41m    [m
+   }[m
+ [m
+   .photo-item {[m
+[36m@@ -235,3 +237,13 @@[m
+ ::-webkit-scrollbar-thumb:hover {[m
+   background: hsl(var(--muted-foreground) / 0.5);[m
+ }[m
+[32m+[m
+[32m+[m[32m@media print {[m
+[32m+[m[32m  [data-sonner-toaster],[m
+[32m+[m[32m  .toaster,[m
+[32m+[m[32m  #radix-toast-provider,[m
+[32m+[m[32m  [id^="DndLiveRegion"],[m
+[32m+[m[32m  [id^="DndDescribedBy"] {[m
+[32m+[m[32m    display: none !important;[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/pages/Index.tsx b/src/pages/Index.tsx[m
+[1mindex 176dc1b..8f10468 100644[m
+[1m--- a/src/pages/Index.tsx[m
+[1m+++ b/src/pages/Index.tsx[m
+[36m@@ -45,7 +45,7 @@[m [mconst Index = () => {[m
+   }, []);[m
+ [m
+   return ([m
+[31m-    <div className="min-h-screen gradient-subtle">[m
+[32m+[m[32m    <div className="min-h-screen print:min-h-0 gradient-subtle print:bg-transparent print:bg-none">[m
+       <Toaster position="top-right" richColors />[m
+       [m
+       {/* Print Header - appears on all printed pages */}[m

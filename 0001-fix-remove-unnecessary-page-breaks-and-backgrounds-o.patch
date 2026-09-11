@@ -1,0 +1,63 @@
+From fdbcaa0e91a0bdc133f0b4663a9022ebac8572d5 Mon Sep 17 00:00:00 2001
+From: Chiquinha <chiquinha@openclaw.local>
+Date: Fri, 11 Sep 2026 00:19:23 +0000
+Subject: [PATCH] fix: remove unnecessary page breaks and backgrounds on print
+
+---
+ src/index.css       | 16 ++++++++++++++--
+ src/pages/Index.tsx |  2 +-
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/src/index.css b/src/index.css
+index 59d187e..4654932 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -190,14 +190,16 @@
+   }
+ 
+   .print-content {
+-    padding-top: 40mm !important; /* maior que a altura do header */
++    padding-top: 40mm !important;
++    padding-bottom: 0 !important;
++    margin-bottom: 0 !important; /* maior que a altura do header */
+   }
+ 
+   .photo-grid {
+     display: grid !important;
+     grid-template-columns: 1fr !important;
+     gap: 24px !important;
+-    page-break-inside: avoid;
++    
+   }
+ 
+   .photo-item {
+@@ -235,3 +237,13 @@
+ ::-webkit-scrollbar-thumb:hover {
+   background: hsl(var(--muted-foreground) / 0.5);
+ }
++
++@media print {
++  [data-sonner-toaster],
++  .toaster,
++  #radix-toast-provider,
++  [id^="DndLiveRegion"],
++  [id^="DndDescribedBy"] {
++    display: none !important;
++  }
++}
+diff --git a/src/pages/Index.tsx b/src/pages/Index.tsx
+index 176dc1b..8f10468 100644
+--- a/src/pages/Index.tsx
++++ b/src/pages/Index.tsx
+@@ -45,7 +45,7 @@ const Index = () => {
+   }, []);
+ 
+   return (
+-    <div className="min-h-screen gradient-subtle">
++    <div className="min-h-screen print:min-h-0 gradient-subtle print:bg-transparent print:bg-none">
+       <Toaster position="top-right" richColors />
+       
+       {/* Print Header - appears on all printed pages */}
+-- 
+2.39.5
+
