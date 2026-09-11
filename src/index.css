@@ -190,14 +190,16 @@
   }
 
   .print-content {
-    padding-top: 40mm !important; /* maior que a altura do header */
+    padding-top: 40mm !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important; /* maior que a altura do header */
   }
 
   .photo-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 24px !important;
-    page-break-inside: avoid;
+    
   }
 
   .photo-item {
@@ -234,4 +236,14 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.5);
+}
+
+@media print {
+  [data-sonner-toaster],
+  .toaster,
+  #radix-toast-provider,
+  [id^="DndLiveRegion"],
+  [id^="DndDescribedBy"] {
+    display: none !important;
+  }
 }

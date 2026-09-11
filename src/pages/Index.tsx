@@ -45,7 +45,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen gradient-subtle">
+    <div className="min-h-screen print:min-h-0 gradient-subtle print:bg-transparent print:bg-none">
       <Toaster position="top-right" richColors />
       
       {/* Print Header - appears on all printed pages */}
